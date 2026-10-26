@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head><meta charset="UTF-8"><title>Admin</title><style>body{font-family:sans-serif;max-width:800px;margin:30px auto}table{border-collapse:collapse;width:100%}td,th{border:1px solid #ccc;padding:6px}input,select,button{padding:5px;margin:2px}nav a{margin-right:12px}.err{color:red}.ok{color:green}</style></head>
+<body>
+<nav><a th:href="@{/home}">Accueil</a></nav>
+<h2>Gestion des utilisateurs</h2>
+<table>
+    <tr><th>ID</th><th>Utilisateur</th><th>Rôle</th><th></th></tr>
+    <tr th:each="u : ${users}">
+        <td th:text="${u.id}"></td>
+        <td th:text="${u.username}"></td>
+        <td><span th:each="r : ${u.roles}" th:text="${r.name}"></span></td>
+        <td>
+            <form th:action="@{/admin/users/delete/{id}(id=${u.id})}" method="post">
+                <button>Supprimer</button>
+            </form>
+        </td>
+    </tr>
+</table>
+<h3>Ajouter un utilisateur</h3>
+<form th:action="@{/admin/users}" method="post">
+    <input name="username" placeholder="Utilisateur" required>
+    <input name="password" type="password" placeholder="Mot de passe" required>
+    <select name="role"><option th:each="r : ${roles}" th:value="${r.name}" th:text="${r.name}"></option></select>
+    <button>Ajouter</button>
+</form>
+</body>
+</html>

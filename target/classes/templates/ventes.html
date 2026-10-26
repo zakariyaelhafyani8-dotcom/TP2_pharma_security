@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head><meta charset="UTF-8"><title>Ventes</title><style>body{font-family:sans-serif;max-width:800px;margin:30px auto}table{border-collapse:collapse;width:100%}td,th{border:1px solid #ccc;padding:6px}input,select,button{padding:5px;margin:2px}nav a{margin-right:12px}.err{color:red}.ok{color:green}</style></head>
+<body>
+<nav><a th:href="@{/home}">Accueil</a></nav>
+<h2>Enregistrer une vente</h2>
+<table>
+    <tr><th>Nom</th><th>Prix (DH)</th><th>Stock</th><th>Vente</th></tr>
+    <tr th:each="m : ${medicaments}">
+        <td th:text="${m.nom}"></td>
+        <td th:text="${m.prix}"></td>
+        <td th:text="${m.stock}"></td>
+        <td>
+            <form th:action="@{/ventes/sell/{id}(id=${m.id})}" method="post">
+                <input type="number" name="quantite" value="1" min="1" th:max="${m.stock}" required>
+                <button>Vendre</button>
+            </form>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

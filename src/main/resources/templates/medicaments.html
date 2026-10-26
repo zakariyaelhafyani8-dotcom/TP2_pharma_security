@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head><meta charset="UTF-8"><title>Médicaments</title><style>body{font-family:sans-serif;max-width:800px;margin:30px auto}table{border-collapse:collapse;width:100%}td,th{border:1px solid #ccc;padding:6px}input,select,button{padding:5px;margin:2px}nav a{margin-right:12px}.err{color:red}.ok{color:green}</style></head>
+<body>
+<nav><a th:href="@{/home}">Accueil</a></nav>
+<h2>Médicaments</h2>
+<table>
+    <tr><th>Nom</th><th>Prix (DH)</th><th>Stock</th><th sec:authorize="hasAnyRole('ADMIN','PHARMACIEN')">Modifier stock</th><th sec:authorize="hasRole('ADMIN')"></th></tr>
+    <tr th:each="m : ${medicaments}">
+        <td th:text="${m.nom}"></td>
+        <td th:text="${m.prix}"></td>
+        <td th:text="${m.stock}"></td>
+        <td sec:authorize="hasAnyRole('ADMIN','PHARMACIEN')">
+            <form th:action="@{/medicaments/stock/{id}(id=${m.id})}" method="post">
+                <input type="number" name="stock" th:value="${m.stock}" min="0" required>
+                <button>OK</button>
+            </form>
+        </td>
+        <td sec:authorize="hasRole('ADMIN')">
+            <form th:action="@{/medicaments/delete/{id}(id=${m.id})}" method="post"><button>Supprimer</button></form>
+        </td>
+    </tr>
+</table>
+<div sec:authorize="hasRole('ADMIN')">
+    <h3>Ajouter un médicament</h3>
+    <form th:action="@{/medicaments/add}" method="post">
+        <input name="nom" placeholder="Nom" required>
+        <input name="prix" type="number" step="0.01" placeholder="Prix" required>
+        <input name="stock" type="number" placeholder="Stock" required>
+        <button>Ajouter</button>
+    </form>
+</div>
+</body>
+</html>

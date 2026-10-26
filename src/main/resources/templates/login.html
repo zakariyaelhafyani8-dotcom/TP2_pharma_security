@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head><meta charset="UTF-8"><title>Login</title><style>body{font-family:sans-serif;max-width:800px;margin:30px auto}table{border-collapse:collapse;width:100%}td,th{border:1px solid #ccc;padding:6px}input,select,button{padding:5px;margin:2px}nav a{margin-right:12px}.err{color:red}.ok{color:green}</style></head>
+<body>
+<h2>Connexion - Pharmacie</h2>
+<p class="err" th:if="${param.error}">Identifiants incorrects.</p>
+<p class="ok" th:if="${param.logout}">Vous êtes déconnecté.</p>
+<form th:action="@{/login}" method="post">
+    <input name="username" placeholder="Utilisateur" required><br>
+    <input name="password" type="password" placeholder="Mot de passe" required><br>
+    <button type="submit">Se connecter</button>
+</form>
+</body>
+</html>

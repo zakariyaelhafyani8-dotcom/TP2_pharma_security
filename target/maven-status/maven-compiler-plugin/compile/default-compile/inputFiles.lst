@@ -1,0 +1,14 @@
+/home/zakariyaelhafyani/Documents/S3 ILIA-25-26/Spring Boot et Angular/TPs/pharma_security/src/main/java/com/ensa/pharma/PharmaSecurityApplication.java
+/home/zakariyaelhafyani/Documents/S3 ILIA-25-26/Spring Boot et Angular/TPs/pharma_security/src/main/java/com/ensa/pharma/config/SecurityConfig.java
+/home/zakariyaelhafyani/Documents/S3 ILIA-25-26/Spring Boot et Angular/TPs/pharma_security/src/main/java/com/ensa/pharma/controller/AdminController.java
+/home/zakariyaelhafyani/Documents/S3 ILIA-25-26/Spring Boot et Angular/TPs/pharma_security/src/main/java/com/ensa/pharma/controller/LoginController.java
+/home/zakariyaelhafyani/Documents/S3 ILIA-25-26/Spring Boot et Angular/TPs/pharma_security/src/main/java/com/ensa/pharma/controller/MedicamentController.java
+/home/zakariyaelhafyani/Documents/S3 ILIA-25-26/Spring Boot et Angular/TPs/pharma_security/src/main/java/com/ensa/pharma/controller/VenteController.java
+/home/zakariyaelhafyani/Documents/S3 ILIA-25-26/Spring Boot et Angular/TPs/pharma_security/src/main/java/com/ensa/pharma/model/Medicament.java
+/home/zakariyaelhafyani/Documents/S3 ILIA-25-26/Spring Boot et Angular/TPs/pharma_security/src/main/java/com/ensa/pharma/model/Role.java
+/home/zakariyaelhafyani/Documents/S3 ILIA-25-26/Spring Boot et Angular/TPs/pharma_security/src/main/java/com/ensa/pharma/model/User.java
+/home/zakariyaelhafyani/Documents/S3 ILIA-25-26/Spring Boot et Angular/TPs/pharma_security/src/main/java/com/ensa/pharma/repository/MedicamentRepository.java
+/home/zakariyaelhafyani/Documents/S3 ILIA-25-26/Spring Boot et Angular/TPs/pharma_security/src/main/java/com/ensa/pharma/repository/RoleRepository.java
+/home/zakariyaelhafyani/Documents/S3 ILIA-25-26/Spring Boot et Angular/TPs/pharma_security/src/main/java/com/ensa/pharma/repository/UserRepository.java
+/home/zakariyaelhafyani/Documents/S3 ILIA-25-26/Spring Boot et Angular/TPs/pharma_security/src/main/java/com/ensa/pharma/service/CustomUserDetailsService.java
+/home/zakariyaelhafyani/Documents/S3 ILIA-25-26/Spring Boot et Angular/TPs/pharma_security/src/main/java/com/ensa/pharma/service/InitData.java
